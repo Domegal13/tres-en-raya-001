@@ -16,6 +16,9 @@ const contadores = document.querySelector(".contadores");
 
 const p = document.createElement("p");
 const p1 = document.createElement("p");
+const modal = document.querySelector("dialog");
+const pModal = document.querySelector(".p-modal");
+const closeModal = document.querySelector(".close-modal");
 
 let turno = 0;
 let currentPlayer = "";
@@ -52,10 +55,14 @@ const ganador = () => {
 
       if (currentPlayer === "O") {
         contPlayerO++;
+        pModal.innerHTML = `El jugador ${currentPlayer} ha Ganado`;
+        modal.showModal();
       }
 
       if (currentPlayer === "X") {
         contPlayerX++;
+        pModal.innerHTML = `El jugador ${currentPlayer} ha Ganado`;
+        modal.showModal();
       }
       p.innerHTML = `Player 'X' ha ganado: <strong>${contPlayerX}</strong>`;
       p1.innerHTML = `Player 'O' ha ganado: <strong>${contPlayerO}</strong>`;
@@ -91,24 +98,10 @@ btnReset.addEventListener("click", () => {
   p1.innerHTML = `Player 'O' ha ganado: <strong>${contPlayerO}</strong>`;
 });
 
-// const clear = () => {
-//   tablero.forEach((item) => {
-//     item.textContent = "";
-//     item.style.background = "#ddd";
-
-//     turno = 0;
-//   });
-// };
-
-// btnNewGame.addEventListener("click", () => {
-//   clear();
-// });
-
-// btnReset.addEventListener("click", () => {
-//   clear();
-//   contPlayerO = 0;
-//   contPlayerX = 0;
-// });
+closeModal.addEventListener("click", () => {
+  modal.close();
+  clear();
+});
 
 // const p = document.createElement("p");
 // const p1 = document.createElement("p");
