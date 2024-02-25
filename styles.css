@@ -13,9 +13,8 @@ body {
 
 header .titulo {
   text-align: center;
-  padding: 50px;
+  padding: 20px;
   color: #fff;
-  /* background: linear-gradient(45deg, #ffff00, #0000ff, #ff0000); */
   margin-bottom: 50px;
 }
 
@@ -38,18 +37,30 @@ header .titulo {
 .contadores {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .contadores p {
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
   font-weight: 600;
   margin: 20px 20px 5px;
   padding: 0 30px 0 20px;
   color: #fff;
+  background: #1414f1;
+  width: 12%;
+  height: 50px;
+}
+.contadores .p-o {
+  background: #ff0000;
+  width: 12%;
 }
 
 .contadores p strong {
-  color: #2af823;
+  color: #fff;
 }
 
 .boton {
@@ -57,14 +68,14 @@ header .titulo {
   background: #ddd;
   width: 100%;
   height: 100%;
-  font-size: 3em;
+  font-size: 4rem;
   font-weight: 700;
 }
 
 .boxReset {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 70px;
+  padding-top: 25px;
 }
 .btnDown {
   width: 20%;
@@ -87,19 +98,6 @@ header .titulo {
   color: #fff;
 }
 
-/* .dialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: 35%;
-  background: transparent;
-  margin: auto;
-}
-.dialog::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-} */
-
 dialog {
   margin: auto;
   background: transparent;
@@ -116,7 +114,6 @@ dialog::backdrop {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  /* border: 1px solid #ff0000; */
   padding-bottom: 25px;
 }
 

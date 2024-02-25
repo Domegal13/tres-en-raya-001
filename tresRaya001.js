@@ -30,15 +30,15 @@ tablero.forEach((element, index) => {
     if (!element.textContent) {
       turno++;
       if (turno % 2 === 0) {
-        element.textContent = "O";
+        element.innerHTML = "O";
         element.style.background = "#ff0000";
         currentPlayer = "O";
       } else {
-        element.textContent = "X";
-        element.style.background = "lime";
+        element.innerHTML = "X";
+        element.style.background = "#1414f1";
         currentPlayer = "X";
       }
-      // console.log(element);
+
       ganador();
     }
   });
@@ -51,29 +51,26 @@ const ganador = () => {
       tablero[element[0]].textContent === tablero[element[1]].textContent &&
       tablero[element[0]].textContent === tablero[element[2]].textContent
     ) {
-      // console.log(`El ganador es: ${currentPlayer}`);
-
       if (currentPlayer === "O") {
         contPlayerO++;
-        pModal.innerHTML = `El jugador ${currentPlayer} ha Ganado`;
+        pModal.innerHTML = `El jugador  "${currentPlayer}" ha Ganado`;
         modal.showModal();
       }
 
       if (currentPlayer === "X") {
         contPlayerX++;
-        pModal.innerHTML = `El jugador ${currentPlayer} ha Ganado`;
+        pModal.innerHTML = `El jugador  "${currentPlayer}" ha Ganado`;
         modal.showModal();
       }
-      p.innerHTML = `Player 'X' ha ganado: <strong>${contPlayerX}</strong>`;
-      p1.innerHTML = `Player 'O' ha ganado: <strong>${contPlayerO}</strong>`;
-      // console.log(contPlayerX);
-      // console.log(contPlayerO);
+      p.innerHTML = `<strong>${contPlayerX}</strong>`;
+      p1.innerHTML = ` <strong>${contPlayerO}</strong>`;
     }
   });
 };
 
-p.innerHTML = `Player 'X' ha ganado: <strong>${contPlayerX}</strong>`;
-p1.innerHTML = `Player 'O' ha ganado: <strong>${contPlayerO}</strong>`;
+p.innerHTML = ` <strong>${contPlayerX}</strong>`;
+p1.innerHTML = ` <strong>${contPlayerO}</strong>`;
+p1.setAttribute("class", "p-o");
 contadores.appendChild(p);
 contadores.appendChild(p1);
 
@@ -81,8 +78,6 @@ const clear = () => {
   tablero.forEach((item) => {
     item.textContent = "";
     item.style.background = "#ddd";
-
-    // turno = 0;
   });
 };
 
@@ -94,18 +89,11 @@ btnReset.addEventListener("click", () => {
   clear();
   contPlayerO = 0;
   contPlayerX = 0;
-  p.innerHTML = `Player 'X' ha ganado: <strong>${contPlayerX}</strong>`;
-  p1.innerHTML = `Player 'O' ha ganado: <strong>${contPlayerO}</strong>`;
+  p.innerHTML = `<strong>${contPlayerX}</strong>`;
+  p1.innerHTML = ` <strong>${contPlayerO}</strong>`;
 });
 
 closeModal.addEventListener("click", () => {
   modal.close();
   clear();
 });
-
-// const p = document.createElement("p");
-// const p1 = document.createElement("p");
-// p.innerHTML = `Player X ha ganado ${contPlayerX}`;
-// p1.textContent = `Player O ha ganado ${contPlayerO}`;
-// contadores.appendChild(p);
-// contadores.appendChild(p1);
